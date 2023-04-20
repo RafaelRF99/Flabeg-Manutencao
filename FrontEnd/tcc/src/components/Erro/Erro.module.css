@@ -1,0 +1,29 @@
+@keyframes btn-pisca {
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+}
+
+.configuracao {
+    /* TAMANHO */
+    width: 300px;
+    height: 60px;
+    /* POSICAO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /* COR E FORMATACAO */
+    background-color: #dd4040cb;
+    color: #FFF;
+    font-size: 1.1rem;
+
+    text-decoration: none;
+    border-radius: 4px;
+    -webkit-animation: btn-pisca 2s linear infinite;
+    -moz-animation: btn-pisca 2s linear infinite;
+    -ms-animation: btn-pisca 2s linear infinite;
+    -o-animation: btn-pisca 2s linear infinite;
+    animation: btn-pisca 2s linear infinite;
+}

@@ -1,6 +1,7 @@
 import styles from './TipoManutencao.module.css'
 import { useState } from 'react'
 import tipos from './tipos.json'
+import Erro from '@/components/Erro'
 
 export default function TipoManutencao() {
     const [escolha, setEscolha] = useState<number[]>([])
@@ -31,7 +32,7 @@ export default function TipoManutencao() {
     // MOSTRA O ERRO NA TELA
     function tipoSelecionado() {
         if (escolha.length > 1) {
-            return "Erro"
+            return <Erro erro='Deixar somente 1 tipo selecionado!' />
         }
     }
 
