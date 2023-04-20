@@ -1,0 +1,23 @@
+.solicitante {
+    display: flex;
+    align-items: center;
+}
+
+.solicitante input {
+    margin-left: .8rem;
+    max-width: 15rem;
+    width: 100%;
+    font-size: 1rem;
+}
+
+@media (max-width: 500px) {
+    .solicitante {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .solicitante input {
+        margin: 0;
+    }
+}

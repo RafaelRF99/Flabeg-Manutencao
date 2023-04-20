@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.container span {
+    margin-right: .4rem;
+}
+
+.linha {
+    width: 4rem;
+}
+
+.maquina {
+    width: 20rem;
+}
+
+@media (max-width: 500px) {
+    .maquina {
+        width: 100%;
+    }
+}

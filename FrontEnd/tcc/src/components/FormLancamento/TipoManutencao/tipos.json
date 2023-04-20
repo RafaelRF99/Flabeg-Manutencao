@@ -1,0 +1,14 @@
+[
+    {
+        "tipo": "Corretiva"
+    },
+    {
+        "tipo": "Preventiva"
+    },
+    {
+        "tipo": "Preditiva"
+    },
+    {
+        "tipo": "Melhoria"
+    }
+]

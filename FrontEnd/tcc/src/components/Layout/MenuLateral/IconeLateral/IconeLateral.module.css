@@ -1,0 +1,36 @@
+.iconePadrao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    color: #FFF;
+    background-color: #0005;
+    margin-bottom: 3px;
+}
+
+.iconePadrao:hover {
+    background-color: #0006;
+    cursor: pointer;
+}
+
+.iconeSair {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    color: #FFF;
+    background-color: rgba(251, 6, 6, 0.599);
+}
+
+.iconeSair:hover {
+    background-color: #e93131;
+    cursor: pointer;
+}
+
+.icone {
+    width: 30px;
+}

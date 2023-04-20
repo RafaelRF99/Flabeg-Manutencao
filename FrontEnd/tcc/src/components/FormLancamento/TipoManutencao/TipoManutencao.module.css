@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    gap: 3px;
+}
+
+.container div {
+    padding: 7px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.container label {
+    user-select: none;
+    padding: 0 10px;
+}
+
+.container input {
+    padding: 10px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+    }
+}
