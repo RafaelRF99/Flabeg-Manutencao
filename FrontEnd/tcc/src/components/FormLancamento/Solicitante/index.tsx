@@ -1,10 +1,15 @@
 import styles from './Solicitante.module.css'
 
-export default function Solicitante() {
+interface SolicitanteProps {
+    onChange: (e: any) => void
+}
+
+export default function Solicitante(props: SolicitanteProps) {
     return (
         <div className={styles.solicitante}>
             <label>Solicitante:</label>
-            <input type="text" placeholder="Nome do solicitante..." />
+            <input type="text" placeholder="Nome do solicitante..." 
+            onChange={props.onChange} />
         </div>
     )
 }

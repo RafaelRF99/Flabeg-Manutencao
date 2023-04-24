@@ -3,6 +3,7 @@ import styles from './InforBase.module.css'
 interface InforBaseProps {
     titulo: string
     tipo: string
+    onChange?: (e: any) => void
 }
 
 export default function InforBase(props: InforBaseProps) {
@@ -29,7 +30,7 @@ export default function InforBase(props: InforBaseProps) {
         <span className={styles.container}>
             <span>{props.titulo}</span>
             <div className={styles.descricao}>
-                <input className={tipo()} type={props.tipo} />
+                <input className={tipo()} type={props.tipo} onChange={props.onChange} />
             </div>
         </span>
     )
