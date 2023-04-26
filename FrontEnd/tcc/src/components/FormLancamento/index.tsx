@@ -18,24 +18,34 @@ export default function FormLancamento() {
     const [solicitante, setSolicitante] = useState()
     const [descricao, setDescricao] = useState()
 
-    function salvamento(e: React.FormEvent<HTMLFormElement>) {
+    async function salvamento(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        const usuario = {
+        const tarefa = {
             tipo: alteracaoTipo,
             linha,
             maquina,
             data,
             hora,
             solicitante,
-            descricao
-        }
-        console.log(usuario)
+            descricao,
+        };
+        fetch('http://localhost:5000/tarefa', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(tarefa)
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
     }
+
 
     // ATUALIZA O STATE
     useEffect(() => {
         converter(tipo)
-    },[tipo])
+    }, [tipo])
 
     function converter(tipo: any[]) {
         if (tipo[0] === 0) {
