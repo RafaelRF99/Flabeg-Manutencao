@@ -1,7 +1,9 @@
 require('dotenv').config()
 const express = require('express');
+const cors = require('cors')
 const mongoose = require('mongoose')
 const app = express();
+app.use(cors())
 app.use(express.json());
 
 // MODEL
@@ -15,14 +17,9 @@ const dbPass = process.env.DB_PASS
 mongoose
     .connect(`mongodb+srv://${dbUser}:${dbPass}@cluster0.tbv8xsq.mongodb.net/?retryWrites=true&w=majority`)
     .then(() => {
-        app.listen(3001)
+        app.listen(5000)
         console.log("Conectado ao BD Mongo!")
     }).catch((err) => console.log(err))
-
-// FUNCTIONs
-function buscaTarefa(id) {
-    return tarefa.findIndex(usuario => usuario.id === id)
-}
 
 app.get('/', (req, res) => {
     res.status(200).json({ msg: "API Funcionando!" })
