@@ -8,7 +8,7 @@ export default function Logo() {
     return (
         <div className={styles.container}>
             <div className={styles.logo}>
-                <Image src={Flabeg} alt='Flabeg' height={tamanho} width={120} />
+                <Image src={Flabeg} alt='Flabeg' height={tamanho} width={120} priority />
             </div>
         </div>
     )
