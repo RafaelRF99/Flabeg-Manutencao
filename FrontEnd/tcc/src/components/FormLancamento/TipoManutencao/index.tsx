@@ -2,7 +2,7 @@ import styles from './TipoManutencao.module.css'
 // COMPONENTS
 import Erro from '@/components/Erro'
 // HOOKS E JSON
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import tipos from './tipos.json'
 
 interface TipoManutencaoProps {
@@ -11,12 +11,17 @@ interface TipoManutencaoProps {
 
 export default function TipoManutencao(props: TipoManutencaoProps) {
     const [escolha, setEscolha] = useState<number[]>([])
+    
+    useEffect(() => {
+        trocaProps()
+    },[escolha])
+    
+    function trocaProps() {
+        props.tipo(escolha)
+    }
 
     // RENDERIZA OS TIPOS
     function render() {
-        // LINHA CAUSANDO 1 ERRO NO CONSOLE
-        props.tipo(escolha)
-        // LINHA CAUSANDO 1 ERRO NO CONSOLE
         return tipos.map((tipo, i) => {
             return (
                 <div key={i}>
