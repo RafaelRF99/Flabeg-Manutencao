@@ -28,13 +28,13 @@ app.get('/', (req, res) => {
     res.status(200).json({ msg: "API Funcionando!" })
 })
 // TODAS TAREFAS
-app.get('/tarefa', async(req, res) => {
+app.get('/tarefa', async (req, res) => {
     const tarefa = await Tarefa.find()
     res.status(200).json({ tarefa })
 })
 // REGISTRAR
 app.post('/tarefa', async (req, res) => {
-    const { tipo, linha, maquina, data, hora, solicitante, descricao} = req.body
+    const { tipo, linha, maquina, data, hora, solicitante, descricao } = req.body
 
     if (!tipo) {
         return res.status(422).json({ msg: "Tipo obrigatório!" })
@@ -87,10 +87,4 @@ app.get("/tarefa/:id", async (req, res) => {
     }
 
     res.status(200).json({ tarefa })
-});
-
-app.put('/tarefa/:id', async(req, res) => {
-    let index = buscaTarefa(parseInt(req.params.id))
-    tarefa[index].linha = req.body.linha
-    res.status(201).json({ msg: "Alteração feita com sucesso!" })
 })
