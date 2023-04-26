@@ -21,7 +21,7 @@ export default function FormLancamento() {
     function salvamento(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const usuario = {
-            alteracaoTipo,
+            tipo: alteracaoTipo,
             linha,
             maquina,
             data,
