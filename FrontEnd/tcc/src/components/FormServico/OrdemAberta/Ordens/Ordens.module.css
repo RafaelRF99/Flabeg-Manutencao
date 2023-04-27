@@ -1,0 +1,16 @@
+.ordem td {
+    flex-wrap: wrap;
+    padding: 0 7px;
+    border-bottom: 1px solid #0005;
+}
+
+.descricao {
+    min-width: 20rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 780px) {
+    .descricao {
+        display: none;
+    }
+}
