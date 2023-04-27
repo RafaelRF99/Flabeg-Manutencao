@@ -18,7 +18,7 @@ export default function Layout(props: LayoutProps) {
                 <div className={styles.cabecalho}>
                 <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo} />
                 </div>
-                <Conteudo children={props.children} />
+                <Conteudo>{props.children}</Conteudo>
             </div>
         </div>
     )
