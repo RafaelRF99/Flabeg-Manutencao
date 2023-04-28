@@ -1,0 +1,44 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.area {
+    border-radius: 5px;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 40rem;
+    box-shadow: 10px 10px 10px #0004;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.area h1 {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+}
+
+.informacao {
+    display: flex;
+    align-items: flex-end;
+    padding: .2rem 0;
+    border-bottom: 1px solid #0005;
+}
+
+.informacao p {
+    padding: 0 10px 0 7px;
+}
+
+.descricao {
+    padding: 5px 0;
+}

@@ -5,4 +5,5 @@
     height: 8rem;
     overflow-y: scroll;
     resize: none;
+    padding: 10px;
 }

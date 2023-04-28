@@ -1,0 +1,10 @@
+.campo_mg {
+    display: flex;
+    max-width: 45rem;
+    width: 100%;
+    height: 8rem;
+    overflow-y: scroll;
+    resize: none;
+    margin-bottom: 5px;
+    padding: 10px;
+}
