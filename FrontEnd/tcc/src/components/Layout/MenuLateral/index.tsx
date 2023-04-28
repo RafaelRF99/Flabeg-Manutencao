@@ -9,7 +9,7 @@ import IconeLateral from './IconeLateral'
 export default function MenuLateral() {
     return (
         <div className={styles.container}>
-            <Logo />
+            <div className={styles.logo}><Logo /></div>
             <div className={styles.meio}>
                 <Link href="/">
                     <IconeLateral titulo='Home' icone={IconeHome} />

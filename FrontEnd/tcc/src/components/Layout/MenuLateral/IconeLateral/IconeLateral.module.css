@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 80px;
     width: 100%;
     color: #FFF;
@@ -33,4 +34,25 @@
 
 .icone {
     width: 30px;
+}
+
+@media (max-width: 400px) {
+    .icone {
+        width: 25px;
+    }
+    
+    .iconePadrao {
+        text-align: center;
+        background-color: #FFF;
+        margin: 0 12px;
+        color: #000;
+    }
+
+    .iconeSair {
+        margin: 0 0 0 12px;
+    }
+
+    .iconeSair {
+        width: 80px;
+    }
 }

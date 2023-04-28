@@ -10,3 +10,24 @@
 .meio {
     flex-grow: 1;
 }
+
+@media (max-width: 400px) {
+    .container {
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        min-height: 80px;
+        max-height: 80px;
+        box-shadow: 0px 0px 20px;
+        background-color: #FFF;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .meio {
+        display: flex;
+        flex-grow: 0;
+    }
+}
