@@ -4,6 +4,12 @@
     border-bottom: 1px solid #0005;
 }
 
+.opcao {
+    display: flex;
+    width: 20px;
+    cursor: pointer;
+}
+
 .descricao {
     min-width: 20rem;
     flex-wrap: wrap;

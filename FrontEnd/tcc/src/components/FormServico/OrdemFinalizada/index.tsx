@@ -1,11 +1,19 @@
+// CSS
+import styles from './OrdemFinalizada.module.css'
+// COMPONENTS
+import BotaoFechar from './BotaoFechar'
 import MaterialGasto from './MaterialGasto'
 import ServicoFinalizado from './ServicoFinalizado'
-import styles from './ServicoRealizado.module.css'
 
-export default function ServicoRealizado() {
+interface OrdemFinalizadaProps {
+    janela: () => void
+}
+
+export default function OrdemFinalizada(props: OrdemFinalizadaProps) {
     return (
         <div className={styles.container}>
             <div className={styles.area}>
+                <BotaoFechar janela={props.janela}/>
                 <div className={styles.title}>
                 <h1>Realizar Serviço</h1>
                 </div>

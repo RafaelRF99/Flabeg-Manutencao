@@ -11,6 +11,8 @@
 }
 
 .area {
+    font-size: 1rem;
+    position: relative;
     border-radius: 5px;
     background-color: white;
     padding: 1rem 1.5rem;
