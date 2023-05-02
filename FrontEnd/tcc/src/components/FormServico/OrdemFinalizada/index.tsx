@@ -16,6 +16,8 @@ interface OrdemFinalizadaProps {
 }
 
 export default function OrdemFinalizada(props: OrdemFinalizadaProps) {
+    const [servico, setServico] = useState()
+    const [material, setMaterial] = useState()
     const [tarefaID, setTarefaID] = useState<ITarefa>()
 
     useEffect(() => {
@@ -29,9 +31,26 @@ export default function OrdemFinalizada(props: OrdemFinalizadaProps) {
             .catch(error => console.log(error));
     }, [props.janela])
 
-    function ordemID() {
-        props.janela(false)
-        return console.log("Ativo!")
+    useEffect(() => {
+        
+    }, [])
+
+    async function gerar() {
+        const tarefaAdicional = {
+            servico,
+            material
+        }
+        fetch(`http://localhost:5000/tarefa/${props.selecaoID}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(tarefaAdicional)
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
+            props.janela(false)
     }
 
     return (
@@ -60,11 +79,11 @@ export default function OrdemFinalizada(props: OrdemFinalizadaProps) {
                     <p>{tarefaID?.descricao}</p>
                 </div>
                 <div className={styles.servicos}>
-                    <ServicoFinalizado />
-                    <MaterialGasto />
+                    <ServicoFinalizado servico={e => setServico(e.target.value)} />
+                    <MaterialGasto material={e => setMaterial(e.target.value)} />
                 </div>
                 <div className={styles.botao}>
-                    <Botao onClick={ordemID}>Finalizar OS</Botao>
+                    <Botao onClick={gerar}>Finalizar OS</Botao>
                 </div>
             </div>
         </div>

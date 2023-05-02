@@ -1,10 +1,14 @@
 import styles from './ServicoFinalizado.module.css'
 
-export default function ServicoFinalizado() {
+interface ServicoFinalizadoProps {
+    servico: (value: any) => void
+}
+
+export default function ServicoFinalizado(props: ServicoFinalizadoProps) {
     return (
         <div>
             <label>Serviço Realizado:</label>
-            <textarea className={styles.campo_mg} />
+            <textarea onChange={props.servico} className={styles.campo_mg} />
         </div>
     )
 }
