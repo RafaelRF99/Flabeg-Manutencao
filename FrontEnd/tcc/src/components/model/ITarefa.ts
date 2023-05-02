@@ -7,5 +7,7 @@ export interface ITarefa {
     hora: string;
     solicitante: string;
     descricao: string;
+    servico: string;
+    material: string;
     __v?: number;
 }
