@@ -21,9 +21,10 @@ export default function OrdemAberta(props: OrdemAbertaProps) {
 
     function renderizarOrdens() {
         return props.tarefas.map((tarefa) => {
-            return <Ordens janela={props.janela} key={tarefa._id} tarefa={tarefa} 
-            onClick={() => handleOrdemClick(tarefa._id)} />
-        })
+            return !tarefa.servico ? (
+              <Ordens janela={props.janela} key={tarefa._id} tarefa={tarefa} onClick={() => handleOrdemClick(tarefa._id)} />
+            ) : null;
+          });
     }
 
     return (
