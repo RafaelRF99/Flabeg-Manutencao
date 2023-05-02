@@ -4,7 +4,7 @@ import styles from './FormServico.module.css'
 import { useEffect, useState } from 'react';
 // COMPONENTS
 import OrdemAberta from './OrdemAberta';
-import OrdemFinalizada from './OrdemFinalizada';
+import OrdemFinalizada from './RealizarOS';
 // MODEL
 import { ITarefa } from '../model/ITarefa';
 

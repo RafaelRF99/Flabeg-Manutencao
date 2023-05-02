@@ -15,7 +15,7 @@ export default function MenuLateral() {
                     <IconeLateral titulo='Home' icone={IconeHome} />
                 </Link>
                 <Link href="/lancamento">
-                    <IconeLateral titulo='Lançamento OS' icone={IconeLivro} />
+                    <IconeLateral titulo='Abertura OS' icone={IconeLivro} />
                 </Link>
                 <Link href="/servico">
                     <IconeLateral titulo='Serviço' icone={IconeServico} />

@@ -7,6 +7,7 @@ import ServicoFinalizado from './ServicoFinalizado'
 import Botao from '../../Botao'
 // MODEL
 import { ITarefa } from '@/components/model/ITarefa'
+// HOOKS
 import { useEffect, useState } from 'react'
 
 interface OrdemFinalizadaProps {
@@ -15,7 +16,7 @@ interface OrdemFinalizadaProps {
     selecaoID: string
 }
 
-export default function OrdemFinalizada(props: OrdemFinalizadaProps) {
+export default function RealizarOS(props: OrdemFinalizadaProps) {
     const [servico, setServico] = useState()
     const [material, setMaterial] = useState()
     const [tarefaID, setTarefaID] = useState<ITarefa>()
