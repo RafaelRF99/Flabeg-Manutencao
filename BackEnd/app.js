@@ -63,8 +63,6 @@ app.post('/tarefa', async (req, res) => {
         hora,
         solicitante,
         descricao,
-        servico,
-        material
     })
 
     try {
