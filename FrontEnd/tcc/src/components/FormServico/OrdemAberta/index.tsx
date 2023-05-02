@@ -1,41 +1,34 @@
-// HOOKS
-import { useEffect, useState } from 'react'
-// COMPONENTS
 import styles from './OrdemAberta.module.css'
+// COMPONENTS
 import OrdemCabecalho from './OrdemCabecalho'
 import Ordens from './Ordens'
 // MODEL
-import { ITarefa } from '@/components/model/ITarefa';
+import { ITarefa } from '@/components/model/ITarefa'
 
 interface OrdemAbertaProps {
     janela: () => void
+    tarefas: ITarefa[]
+    Loading: any
+    selecao: string
+    setSelecao: any
 }
 
 export default function OrdemAberta(props: OrdemAbertaProps) {
-    const [tarefas, setTarefas] = useState<ITarefa[]>([]);
-    const [Loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/tarefa')
-            .then(response => response.json())
-            .then(res => {
-                setTarefas(res.tarefa);
-                setLoading(false);
-            })
-            .catch(error => {
-                console.error('Erro ao buscar as tarefas:', error);
-            });
-    }, []);
+    function handleOrdemClick(tarefaId: string) {
+        props.setSelecao(tarefaId);
+    }
 
     function renderizarOrdens() {
-        return tarefas.map(tarefa => {
-            return <Ordens janela={props.janela} key={tarefa._id} tarefa={tarefa} />
+        return props.tarefas.map((tarefa) => {
+            return <Ordens janela={props.janela} key={tarefa._id} tarefa={tarefa} 
+            onClick={() => handleOrdemClick(tarefa._id)} />
         })
     }
 
     return (
         <div className={styles.container}>
-            {Loading ? (
+            {props.Loading ? (
                 <div>Carregando...</div>
             ) : (
                 <table>
