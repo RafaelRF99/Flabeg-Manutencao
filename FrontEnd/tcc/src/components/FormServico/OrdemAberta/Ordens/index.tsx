@@ -7,8 +7,8 @@ import { IconeEdicao } from '@/icons'
 
 interface OrdensProps {
     tarefa: ITarefa
-    janela: () => void
-    onClick: () => void
+    janela?: () => void
+    onClick?: () => void
 }
 
 export default function Ordens(props: OrdensProps) {

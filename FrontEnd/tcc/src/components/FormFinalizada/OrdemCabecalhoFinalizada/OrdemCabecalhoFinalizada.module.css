@@ -4,6 +4,10 @@
     height: 25px;
 }
 
+.opcao_none {
+    display: none;
+}
+
 @media (max-width: 780px) {
     .descricao {
         display: none;

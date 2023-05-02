@@ -1,6 +1,6 @@
 import styles from './OrdemAberta.module.css'
 // COMPONENTS
-import OrdemCabecalho from './OrdemCabecalho'
+import OrdemCabecalho from './OrdemCabecalhoAberta'
 import Ordens from './Ordens'
 // MODEL
 import { ITarefa } from '@/components/model/ITarefa'

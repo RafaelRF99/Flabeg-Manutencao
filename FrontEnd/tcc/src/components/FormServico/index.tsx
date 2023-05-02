@@ -4,7 +4,7 @@ import styles from './FormServico.module.css'
 import { useEffect, useState } from 'react';
 // COMPONENTS
 import OrdemAberta from './OrdemAberta';
-import OrdemFinalizada from './RealizarOS';
+import RealizarOS from './RealizarOS';
 // MODEL
 import { ITarefa } from '../model/ITarefa';
 
@@ -37,7 +37,7 @@ export default function FormServico() {
     return (
         <div className={styles.container}>
             <OrdemAberta selecao={selecaoID} setSelecao={setSelecaoID} janela={gerar} tarefas={tarefas} Loading={Loading} />
-            {janela ? <OrdemFinalizada selecaoID={selecaoID} tarefas={tarefas} janela={gerar} /> : ''}
+            {janela ? <RealizarOS selecaoID={selecaoID} tarefas={tarefas} janela={gerar} /> : ''}
         </div>
     )
 }
