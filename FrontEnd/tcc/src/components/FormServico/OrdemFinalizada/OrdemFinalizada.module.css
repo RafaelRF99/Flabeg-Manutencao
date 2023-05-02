@@ -44,3 +44,9 @@
 .descricao {
     padding: 5px 0;
 }
+
+.botao {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 .2rem 0;
+}
