@@ -8,9 +8,9 @@ import { ITarefa } from '@/components/model/ITarefa'
 interface OrdemAbertaProps {
     janela: () => void
     tarefas: ITarefa[]
-    Loading: any
+    Loading: boolean
     selecao: string
-    setSelecao: any
+    setSelecao: (e: string) => void
 }
 
 export default function OrdemAberta(props: OrdemAbertaProps) {
@@ -22,9 +22,9 @@ export default function OrdemAberta(props: OrdemAbertaProps) {
     function renderizarOrdens() {
         return props.tarefas.map((tarefa) => {
             return !tarefa.servico ? (
-              <Ordens janela={props.janela} key={tarefa._id} tarefa={tarefa} onClick={() => handleOrdemClick(tarefa._id)} />
+                <Ordens janela={props.janela} key={tarefa._id} tarefa={tarefa} onClick={() => handleOrdemClick(tarefa._id)} />
             ) : null;
-          });
+        });
     }
 
     return (

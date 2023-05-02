@@ -10,7 +10,7 @@ import { ITarefa } from '@/components/model/ITarefa'
 import { useEffect, useState } from 'react'
 
 interface OrdemFinalizadaProps {
-    janela: any
+    janela: (e: boolean) => void
     tarefas: ITarefa[]
     selecaoID: string
 }

@@ -1,8 +1,12 @@
+// CSS
 import styles from './Ordens.module.css'
+// MODEL
+import { ITarefa } from '@/components/model/ITarefa'
+// ICONS
 import { IconeEdicao } from '@/icons'
 
 interface OrdensProps {
-    tarefa: any
+    tarefa: ITarefa
     janela: () => void
     onClick: () => void
 }
