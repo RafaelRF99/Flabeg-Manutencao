@@ -6,13 +6,13 @@
     text-align: center;
     height: 80px;
     width: 100%;
-    color: #FFF;
-    background-color: #0005;
+    color: #7c7c7c;
+    background-color: #d0d0d03f;
     margin-bottom: 3px;
 }
 
 .iconePadrao:hover {
-    background-color: #0006;
+    background-color: #0002;
     cursor: pointer;
 }
 
@@ -44,12 +44,7 @@
     .iconePadrao {
         text-align: center;
         background-color: #FFF;
-        margin: 0 12px;
         color: #000;
-    }
-
-    .iconeSair {
-        margin: 0 0 0 12px;
     }
 
     .iconeSair {
