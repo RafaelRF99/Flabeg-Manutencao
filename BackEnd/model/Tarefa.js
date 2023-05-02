@@ -8,6 +8,8 @@ const Tarefa = mongoose.model('Tarefa', {
     hora: String,
     solicitante: String,
     descricao: String,
+    servico: String,
+    material: String,
 })
 
 module.exports = Tarefa

@@ -34,25 +34,25 @@ app.post('/tarefa', async (req, res) => {
     const { tipo, linha, maquina, data, hora, solicitante, descricao } = req.body
 
     if (!tipo) {
-        return res.status(422).json({ msg: "Tipo obrigatório!" })
+        return res.status(422).json({ msg: "Tipo obrigatório!" });
     }
     if (!linha) {
-        return res.status(422).json({ msg: "Linha obrigatória!" })
+        return res.status(422).json({ msg: "Linha obrigatória!" });
     }
     if (!maquina) {
-        return res.status(422).json({ msg: "Máquina obrigatória!" })
+        return res.status(422).json({ msg: "Máquina obrigatória!" });
     }
     if (!data) {
-        return res.status(422).json({ msg: "Data obrigatória!" })
+        return res.status(422).json({ msg: "Data obrigatória!" });
     }
     if (!hora) {
-        return res.status(422).json({ msg: "Hora obrigatória!" })
+        return res.status(422).json({ msg: "Hora obrigatória!" });
     }
     if (!solicitante) {
-        return res.status(422).json({ msg: "Solicitante obrigatório!" })
+        return res.status(422).json({ msg: "Solicitante obrigatório!" });
     }
     if (!descricao) {
-        return res.status(422).json({ msg: "Descricao obrigatória!" })
+        return res.status(422).json({ msg: "Descricao obrigatória!" });
     }
 
     const tarefa = new Tarefa({
@@ -62,26 +62,58 @@ app.post('/tarefa', async (req, res) => {
         data,
         hora,
         solicitante,
-        descricao
+        descricao,
+        servico,
+        material
     })
 
     try {
         await tarefa.save()
-        res.status(201).json({ msg: "Usuário Criado!" })
+        res.status(201).json({ msg: "Usuário Criado!" });
     } catch (error) {
-        res.status(500).json({ msg: "Tente mais tarde!" })
-        console.log(error)
+        res.status(500).json({ msg: "Tente mais tarde!" });
+        console.log(error);
     }
 })
 // OBTER TAREFA
 app.get("/tarefa/:id", async (req, res) => {
     const id = req.params.id;
 
-    const tarefa = await Tarefa.findById(id)
+    const tarefa = await Tarefa.findById(id);
 
     if (!tarefa) {
-        return res.status(404).json({ msg: "Tarefa não encontrada!" })
+        return res.status(404).json({ msg: "Tarefa não encontrada!" });
     }
 
     res.status(200).json({ tarefa })
 })
+// ADICIONAR RESTANTE
+app.put("/tarefa/:id", async (req, res) => {
+    const { servico, material } = req.body
+    const id = req.params.id;
+
+    const tarefa = await Tarefa.findById(id);
+
+    if (!tarefa) {
+        return res.status(404).json({ msg: "Tarefa não encontrada!" });
+    }
+
+    if (!servico) {
+        return res.status(422).json({ msg: "Serviço obrigatório!" })
+    }
+
+    if (!material) {
+        return res.status(422).json({ msg: "Material obrigatório!" })
+    }
+
+    tarefa.servico = servico;
+    tarefa.material = material;
+
+    try {
+        await tarefa.save();
+        res.status(200).json({ tarefa });
+    } catch (error) {
+        res.status(500).json({ msg: "Tente mais tarde!" });
+        console.log(error);
+    }
+});
